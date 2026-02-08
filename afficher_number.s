@@ -28,7 +28,7 @@ write_number:
   pop rdi
   call write_digit
   cmp rsp, rbp
-  jme .pop_loop
+  jne .pop_loop
   mov rsp, rbp
   pop rbp
   ret
