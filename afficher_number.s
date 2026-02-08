@@ -12,8 +12,27 @@ write_digit:
   pop rdi
   ret
 
+write_number:
+  push rbp
+  mov rbp, rsp
+.loop
+  mov rax, rdi
+  mov rcx, 10
+  div rcx
+  push rdx
+  mov rdi, rax
+  test rdi, rdi
+  jnz .loop
+.pop_loop
+  pop rdi
+  call write_digit
+  jmp .pop_loop
+  mov rsp, rbp
+  pop rbp
+  ret
+
 main:
-  mov rdi, 9
+  mov rdi, 12345
   call write_digit
   mov rax, 60
   xor rdi, rdi
