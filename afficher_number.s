@@ -1,7 +1,7 @@
 global main:
 
 write_digit:
-  add rdi, 0
+  add rdi, '0'
   mov rax, 1
   mov rsi, rdi
   push rdi
