@@ -33,7 +33,7 @@ write_number:
 
 main:
   mov rdi, 12345
-  call write_digit
+  call write_number
   mov rax, 60
   xor rdi, rdi
   syscall
