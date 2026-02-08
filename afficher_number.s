@@ -18,6 +18,7 @@ write_number:
 .loop
   mov rax, rdi
   mov rcx, 10
+  xor rdx, rdx
   div rcx
   push rdx
   mov rdi, rax
