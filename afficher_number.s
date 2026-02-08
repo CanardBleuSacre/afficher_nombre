@@ -15,7 +15,7 @@ write_digit:
 write_number:
   push rbp
   mov rbp, rsp
-.loop
+.loop:
   mov rax, rdi
   mov rcx, 10
   xor rdx, rdx
@@ -24,7 +24,7 @@ write_number:
   mov rdi, rax
   test rdi, rdi
   jnz .loop
-.pop_loop
+.pop_loop:
   pop rdi
   call write_digit
   jmp .pop_loop
